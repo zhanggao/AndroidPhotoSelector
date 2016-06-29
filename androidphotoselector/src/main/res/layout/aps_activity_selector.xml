@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:clickable="true"
+            android:onClick="selectorOnCLick"
+            android:scaleType="centerInside"
+            android:src="@drawable/aps_back_btn" />
+
+        <TextView
+            android:id="@+id/sure_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="selectorOnCLick"
+            android:padding="5dp"
+            android:text="完成(0/1)" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/album_select_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:clickable="true"
+            android:drawableRight="@drawable/aps_album_arrow"
+            android:gravity="center"
+            android:onClick="selectorOnCLick"
+            android:paddingLeft="10dp"
+            android:text="最近照片" />
+
+        <TextView
+            android:id="@+id/preview_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_gravity="right"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="selectorOnCLick"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="预览(0)" />
+
+    </FrameLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/photo_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom"
+        android:layout_below="@id/header"
+        android:padding="1dp" />
+
+</RelativeLayout>
