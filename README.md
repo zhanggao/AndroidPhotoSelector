@@ -10,6 +10,7 @@
     PhotoSelector.init(new PhotoSelector.ImageLoader() {
         @Override
         public void loadImage(Context context, ImageView imageView, String filePath) {
+            // 这里随便用什么图片加载框架实现。
             Glide.with(context).load(new File(filePath)).placeholder(R.drawable.aps_default_img).into(imageView);
         }
     });
