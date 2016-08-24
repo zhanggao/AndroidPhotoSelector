@@ -42,7 +42,8 @@ public class PhotoStoreLoader {
         AlbumEntity albumEntity;
         PhotoEntity photoEntity;
 
-        while (cursor.moveToNext()) {
+        cursor.moveToLast();
+        while (cursor.moveToPrevious()) {
             if (cursor.getLong(cursor.getColumnIndex(MediaStore.Images.ImageColumns.SIZE)) > 1024 * 10) {
                 albumsName = cursor.getString(cursor.getColumnIndex(MediaStore.Images.ImageColumns.BUCKET_DISPLAY_NAME));
                 photoFilePath = cursor.getString(cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA));
